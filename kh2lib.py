@@ -317,11 +317,11 @@ E003FDFF 0034D45C
 2032BAE8 000000{1}
 """
 }
-ROXAS_LINES = """
-E0051512 0032BAE0
-E0040041 0032BAE4
-E0030041 0032BAE6
-E0020041 0032BAE8
+PLACEMENT_CODES = """
+E0{3}{0}{1} 0032BAE0
+E0{4}00{2} 0032BAE4
+E0{5}00{2} 0032BAE6
+E0{6}00{2} 0032BAE8
 """
 
 import csv, os
@@ -330,6 +330,7 @@ class CodeGen:
         self.table = self.read_csv(fn)
         self.pnach = []
         self.out_fn=out_fn
+        self.toHex = lambda b: hex(b)[2:].zfill(2).upper()
     def apply_cb_code(self,code_str, comment=False):
         if comment:
             self.pnach.append("// {}".format(comment))
@@ -338,12 +339,19 @@ class CodeGen:
                 continue
             line = line.strip().split()
             self.pnach.append("patch=1,EE,{},extended,{}".format(line[0],line[1]))
-    def apply_boss_code(self,loc, obj, alt="00", replace_str=""):
-        #### Reply with actual boss codes
-        self.apply_cb_code(ROXAS_LINES, replace_str)
+    def apply_boss_code(self, original, new, alt="00", replace_str=""):
+        loc = original["loc"]
+        obj = new["obj"]
+        world = original["world"]
+        room = original["room"]
+        event = original["event"]
+        num_e_3 = self.toHex(int(original["numenemies"],16)+3)
+        num_e_2 = self.toHex(int(original["numenemies"],16)+2)
+        num_e_1 = self.toHex(int(original["numenemies"],16)+1)
+        num_e = original["numenemies"]
+        self.apply_cb_code(PLACEMENT_CODES.format(room,world,event,num_e_3,num_e_2,num_e_1,num_e), replace_str)
         self.apply_cb_code("{0} 00{2}{1}".format(loc,obj,alt))
-        ##### TODO MAKE THIS ACTUALLY JUST +2 IN HEX
-        loc2 = "11C4F028"
+        loc2 = self.toHex(int(loc, 16)+32)
         self.apply_cb_code("{0} 000000{1}".format(loc2,alt))
     def apply_loc_code(self, world, room, event):
         self.apply_cb_code(WORLDS[world].format(room,event))
@@ -361,11 +369,11 @@ class CodeGen:
         d = {}
         with open(fn) as f:
             reader = csv.reader(f)
-            i = 2
+            i = 1
             for line in reader:
                 if line[0] == 'Location Code':
                     continue
-                d[i] = {"world": line[0], "room": line[1], "event": line[2], "loc": line[3], "obj": line[4], "name": line[5]}
+                d[i] = {"world": line[0], "room": line[1], "event": line[2], "numenemies": line[3], "loc": line[4], "obj": line[5], "name": line[6]}
                 i += 1
         return d
     def replace_boss(self, s, d):
@@ -379,7 +387,7 @@ class CodeGen:
             alt = "00"
         replace_str = "Replacing {} with {}".format(source["name"], dest["name"])
         print(replace_str)
-        self.apply_boss_code(source["loc"], obj, alt=alt, replace_str=replace_str)
+        self.apply_boss_code(source, dest, alt=alt, replace_str=replace_str)
     def write_pnach(self, debug=False):
         with open(self.out_fn, "w") as f:
             for l in self.pnach:
