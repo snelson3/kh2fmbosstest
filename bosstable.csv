@@ -44,7 +44,7 @@ World,Room,Event,Num Enemies,Location Code,Obj Code,Boss Name,TestType,Notes
 06b,C4,1E,2,11C5C0B0,090E,Hades (Goddess of Fate Cup/Hades Paradox Cup) (Boss),Main,
 07,03,3B,3,11C32934,040B,Volcano Lord (Boss),Main,
 07,03,3B,3,11C32974,040C,Blizzard Lord  (Boss),Main,
-07,05,3E,2,11C56A28,015C,Jafar (Genie) (Boss),NewOnly,
+07,05,3E,2,11C56A28,015C,Jafar (Genie) (Boss),ReplaceOnly,
 08,07,4C,2,11C32BB4,063C,Riku (Boss),Main,
 08,08,4F,2,11C4D324,0165,Storm Rider (Boss),Second,
 08,09,4B,2,11C4BE70,0015,Shan-Yu (Boss),Main,
