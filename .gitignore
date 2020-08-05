@@ -1,5 +1,6 @@
 cheats
 __pycache__
+__pycache__/*
 .DS_Store
 *checkpoint.ipynb
 *.pyc
