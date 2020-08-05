@@ -1,19 +1,8 @@
-add a code for the roxas RCs
-fill out missing table entries
 generate the google drive 
-set proper settings on google doc 
-convert my notes and fill in boss bug reports
+add a code for the roxas RCs
 do a little testing of things
+set proper settings on google doc 
 add readme to git and the doc 
-and a few obvious error checks
 commit to github 
-message valaxor
-ask what the placement code does
-
-// Replacing Roxas (Boss) with Groundshaker (Boss)
-patch=1,EE,E0051512,extended,0032BAE0
-patch=1,EE,E0040041,extended,0032BAE4
-patch=1,EE,E0030041,extended,0032BAE6
-patch=1,EE,E0020041,extended,0032BAE8
-patch=1,EE,11C4F008,extended,00000459
-patch=1,EE,11C4F028,extended,00000000
+convert my notes and fill in boss bug reports
+"release"

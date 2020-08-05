@@ -350,8 +350,10 @@ class CodeGen:
         num_e_2 = self.toHex(int(original["numenemies"],16)+2)
         num_e_1 = self.toHex(int(original["numenemies"],16)+1)
         num_e = original["numenemies"]
-        self.apply_cb_code(PLACEMENT_CODES.format(room,world,event,num_e_3,num_e_2,num_e_1,num_e), replace_str)
-        self.apply_cb_code("{0} 00{2}{1}".format(loc,obj,alt))
+        # All the placement code does is make sure every replacement code isn't run every frame, which would choke the emulator
+        # For a boss tester script, where there is only 1 repalcement code at a time, it should be fine to live without it
+        # self.apply_cb_code(PLACEMENT_CODES.format(room,world,event,num_e_3,num_e_2,num_e_1,num_e))
+        self.apply_cb_code("{0} 00{2}{1}".format(loc,obj,alt),replace_str)
         loc2 = self.toHex(int(loc, 16)+32)
         self.apply_cb_code("{0} 000000{1}".format(loc2,alt))
     def apply_loc_code(self, location):
@@ -359,6 +361,8 @@ class CodeGen:
         room = location["room"]
         event = location["event"]
         world_code = WORLDS[str(world)]
+        if world == "06b":
+            world = "06"
         printstr = "Hold R2 During transition to spawn at {} fight in {}".format(location["name"], world_code[0])
         print(printstr)
         self.apply_cb_code(world_code[1].format(room,event), printstr)
@@ -380,7 +384,7 @@ class CodeGen:
             for line in reader:
                 if line[0] == 'Location Code':
                     continue
-                d[i] = {"world": line[0], "room": line[1], "event": line[2], "numenemies": line[3], "loc": line[4], "obj": line[5], "name": line[6]}
+                d[i] = {"world": line[0], "room": line[1], "event": line[2], "numenemies": line[3], "loc": line[4], "obj": line[5], "name": line[6], "ttype": line[7]}
                 i += 1
         return d
     def replace_boss(self, s, d):
