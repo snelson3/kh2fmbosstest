@@ -6,7 +6,7 @@ World,Room,Event,Num Enemies,Location Code,Obj Code,Boss Name,TestType,Notes
 02,05,58,2,11C2700C,082F,Setzer (Boss),ReplaceOnly,
 02,14,89,2,11C5AF88,0051,Axel II (Normal) (Boss),Main,
 02,14,D5,2,11C5B0BC,09C4,Axel (Data) (Boss),Second,
-02,15,41,2,11C4F008,0951,Roxas (Boss),Main,
+12,15,41,2,11C4F008,0951,Roxas (Boss),Main,
 02,22,9D,2,11C59E24,0133,Twilight Thorn (Boss),Second,"The 01 Made The RC attack kind of work as Sora, might make him usable in some arenas"
 04,01,4B,2,11C24740,08B6,Sephiroth (Boss),Main,
 04,04,37,2,11C4CE7C,08F7,Demyx (Hollow Bastion) (Boss),ReplaceOnly,
