@@ -34,7 +34,7 @@ World,Room,Event,Num Enemies,Location Code,Obj Code,Boss Name,TestType,Notes
 06,08,73,2,11C4F4D0,06BB,Pete (Olympus Coliseum; Part 1) (Boss),ReplaceOnly,
 06,08,74,2,11C4FB08,06BC,Pete (Olympus Coliseum; Part 2) (Boss),Main,
 06,05,03,2,11C591FC,0812,Hades (Escape) (Boss),ReplaceOnly,
-06,04,72,2,11C4D054,09CC,Demyx (Data) (Boss),Second,
+04,04,72,2,11C4D054,09CC,Demyx (Data) (Boss),Second,
 06b,BD,0A,3,unknown,0108F8,Leon (Boss),ReplaceOnly,01 at start means he gets more than half a healthbar
 06b,C4,19,3,unknown,0108F9,Cloud (Boss),ReplaceOnly,01 at start means he gets more than half a healthbar
 06b,C4,19,3,unknown,0108FA,Tifa (Boss),ReplaceOnly,01 at start means she gets more than half a healthbar
