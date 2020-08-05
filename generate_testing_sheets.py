@@ -34,7 +34,7 @@ for o in v:
         ws[w].append(r)
 for c in ws:
     import csv
-    with open('{}.csv'.format(c), 'w', newline='') as csvfile:
+    with open(os.path.join("testsheets", '{}.csv'.format(c)), 'w', newline='') as csvfile:
         spamwriter = csv.writer(csvfile)
         spamwriter.writerow(["old_id","new_id","old boss","new boss","likely to work", "working/functional/broken","notes"])
         for row in ws[c]:

@@ -70,4 +70,4 @@ World,Room,Event,Num Enemies,Location Code,Obj Code,Boss Name,TestType,Notes
 12,14,62,2,11C55AAC,09CA,Final Xemnas (Data) (Boss),ReplaceOnlySecond,
 12,17,49,2,11C58840,085C,Armor Xemnas II,Main,
 12,15,63,2,11C4F13C,010951,Roxas Data,Second,
-13,0E,3A,2,11C5358C,05F8,Luxord (No HP-Bar) (Normal) (Boss),Second,
+12,0E,3A,2,11C5358C,05F8,Luxord (No HP-Bar) (Normal) (Boss),Second,

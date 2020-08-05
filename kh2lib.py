@@ -323,7 +323,10 @@ E0{4}00{2} 0032BAE4
 E0{5}00{2} 0032BAE6
 E0{6}00{2} 0032BAE8
 """
-
+ROXAS_RC_CODE = """
+01C9F62F 00000001
+01C9572F 00000001
+"""
 import csv, os
 class CodeGen:
     def __init__(self, fn="bosstable.csv", out_fn=os.path.join("cheats","F266B00B.pnach"), change_location_code=True):
@@ -366,6 +369,8 @@ class CodeGen:
         printstr = "Hold R2 During transition to spawn at {} fight in {}".format(location["name"], world_code[0])
         print(printstr)
         self.apply_cb_code(world_code[1].format(room,event), printstr)
+    def apply_roxas_rc_code(self):
+        self.apply_cb_code(ROXAS_RC_CODE, "Roxas can perform RC's")
     def apply_all_abilities(self):
         self.apply_cb_code(ALL_ABILITIES_CODE, "Get all abilities on new game")
     def apply_inf_hp(self):
