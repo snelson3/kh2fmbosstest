@@ -24,6 +24,8 @@ for o in v:
             continue
         if "ReplaceOnly" in new["ttype"]:
             continue
+        if original["ttype"] == "NewOnly":
+            continue
         important = "Maybe"
         if new["ttype"] == "Second":
             important = "No"
