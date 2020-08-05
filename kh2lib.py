@@ -237,7 +237,7 @@ HAVE_ALL_ITEMS_CODE = """
 1032F1E6 00000A0A
 """
 WORLDS = {
-    "02": ("Twilight Town, """"
+    "02": ("Twilight Town", """
 E003FDFF 0034D45C
 2032BAE0 0000{0}02
 2032BAE4 00{1}00{1}
@@ -304,7 +304,13 @@ E003FDFF 0034D45C
 2032BAE4 00{1}00{1}
 2032BAE8 000000{1}
 """),
-    "11": ("Space Paranoids, """"
+    "10": ("Port Royal", """
+E003FDFF 0034D45C
+2032BAE0 0000{0}10
+2032BAE4 00{1}00{1}
+2032BAE8 000000{1}
+"""),
+    "11": ("Space Paranoids", """
 E003FDFF 0034D45C
 2032BAE0 0000{0}11
 2032BAE4 00{1}00{1}
