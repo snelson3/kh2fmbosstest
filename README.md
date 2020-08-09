@@ -2,6 +2,17 @@ This is a Python script meant to help reduce friction when it comes to testing B
 
 Many thanks to SonicShadowSilver2 for having detailed pastebins of information on KH2FM, as well as Valaxor for creating his randomizer and having the code for that be open source.
 
+## Known Issues
+
+There are a few bosses that softlock or crash when teleporting to them using the codes this script generates, I haven't been able to figure out why. They hopefully will load properly when you go to them normally in the game (this workaround was only tested with Pete (Past))
+
+# teleporting to Hades 2nd visit & Paradox cup doesn't work
+# Replacing any of the STT Day 4 fights will result in a crash
+# Teleporting to the Volcanic Lord/Blizzard Lord fight softlocks
+# Teleporting to Sephiroth will hard crash PCSX
+# Teleporting to Riku? fight will softlock
+# Teleporting to Pete (Past) will softlock
+
 ## Installation
 
 First make sure to have set up an environment for Valaxor's Randomizer (if you are reading this you probably have done this)

@@ -404,7 +404,7 @@ class CodeGen:
         obj = dest["obj"]
         if len(obj) == 6:
             alt = "01"
-            obj = obj[2:]
+            dest["obj"] = obj[2:]
         else:
             alt = "00"
         replace_str = "Replacing {} with {}".format(source["name"], dest["name"])
