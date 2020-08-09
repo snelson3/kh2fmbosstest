@@ -1,4 +1,4 @@
-This is a Python script meant to help reduce friction when it comes to testing Boss Replacement codes in Kingdom Hearts 2 Final Mix, with the goal of helping improve/stabilize the boss randomizer created by Valaxor
+This is a Python script meant to help reduce friction when it comes to testing Boss Replacement codes in Kingdom Hearts 2 Final Mix, with the goal of gathering information to improve/stabilize the boss randomizer created by Valaxor
 
 Many thanks to SonicShadowSilver2 for having detailed pastebins of information on KH2FM, as well as Valaxor for creating his randomizer and having the code for that be open source.
 
